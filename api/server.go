@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/wilsontamarozzi/bemobi-hire-me/routers"
+	"github.com/wilsontamarozzi/bemobi-hire-me/api/routers"
 	"os"
 )
 

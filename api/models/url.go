@@ -2,7 +2,7 @@ package models
 
 import (
 	"github.com/asaskevich/govalidator"
-	"github.com/wilsontamarozzi/bemobi-hire-me/helpers"
+	"github.com/wilsontamarozzi/bemobi-hire-me/api/helpers"
 	_"github.com/satori/go.uuid"
 )
 

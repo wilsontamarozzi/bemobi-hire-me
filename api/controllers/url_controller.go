@@ -3,9 +3,9 @@ package controllers
 import (
 	"github.com/gin-gonic/gin"
 	_ "github.com/gin-gonic/gin/binding"
-	"github.com/wilsontamarozzi/bemobi-hire-me/helpers"
-	"github.com/wilsontamarozzi/bemobi-hire-me/models"
-	"github.com/wilsontamarozzi/bemobi-hire-me/repositories"
+	"github.com/wilsontamarozzi/bemobi-hire-me/api/helpers"
+	"github.com/wilsontamarozzi/bemobi-hire-me/api/models"
+	"github.com/wilsontamarozzi/bemobi-hire-me/api/repositories"
 	"log"
 )
 

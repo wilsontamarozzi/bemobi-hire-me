@@ -1,9 +1,9 @@
 package repositories
 
 import (
-	"github.com/wilsontamarozzi/bemobi-hire-me/database"
-	"github.com/wilsontamarozzi/bemobi-hire-me/helpers"
-	"github.com/wilsontamarozzi/bemobi-hire-me/models"
+	"github.com/wilsontamarozzi/bemobi-hire-me/api/database"
+	"github.com/wilsontamarozzi/bemobi-hire-me/api/helpers"
+	"github.com/wilsontamarozzi/bemobi-hire-me/api/models"
 	"log"
 	"net/url"
 	"strconv"

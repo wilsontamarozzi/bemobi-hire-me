@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/wilsontamarozzi/bemobi-hire-me",
+	"ImportPath": "github.com/wilsontamarozzi/bemobi-hire-me/api",
 	"GoVersion": "go1.6",
 	"GodepVersion": "v60",
 	"Deps": [

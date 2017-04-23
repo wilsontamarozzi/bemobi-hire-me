@@ -2,7 +2,7 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/wilsontamarozzi/bemobi-hire-me/middleware"
+	"github.com/wilsontamarozzi/bemobi-hire-me/api/middleware"
 )
 
 func InitRoutes() *gin.Engine {

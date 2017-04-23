@@ -4,7 +4,7 @@ import (
 	"github.com/asaskevich/govalidator"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
-	"github.com/wilsontamarozzi/bemobi-hire-me/models"
+	"github.com/wilsontamarozzi/bemobi-hire-me/api/models"
 	"log"
 	"os"
 	"sync"
