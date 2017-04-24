@@ -8,6 +8,7 @@ import (
 	"log"
 	"os"
 	"sync"
+	"fmt"
 )
 
 const (
@@ -89,8 +90,10 @@ func GetInstance() *gorm.DB {
 }
 
 func buildConnection() *gorm.DB {
-	db, err := gorm.Open(DB_DRIVER, "host="+DB_HOST+" user="+DB_USER+" dbname="+DB_NAME+" sslmode="+DB_SSL_MODE+" password="+DB_PASSWORD)
+	strConnection := fmt.Sprintf("host=%s user=%s dbname=%s sslmode=%s password=%s", DB_HOST, DB_USER, DB_NAME, DB_SSL_MODE, DB_PASSWORD)
+	db, err := gorm.Open(DB_DRIVER, strConnection)
 	if err != nil {
+		log.Print("Não foi possivel conectar ao banco de dados")
 		panic(err)
 	}
 
