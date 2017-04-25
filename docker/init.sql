@@ -1,9 +1,9 @@
 -- cria usuário para o app
-CREATE USER wilson WITH PASSWORD '1234';
+--CREATE USER wilson WITH PASSWORD '1234';
 -- cria o banco de dados
-CREATE DATABASE shorten;
+--CREATE DATABASE shorten;
 -- da todos previlegios para o usuário no banco
-GRANT ALL PRIVILEGES ON DATABASE shorten TO wilson;
+--GRANT ALL PRIVILEGES ON DATABASE shorten TO wilson;
 -- loga no novo banco
 \c shorten;
 -- adiciona as extensões ao banco
