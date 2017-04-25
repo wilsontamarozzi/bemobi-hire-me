@@ -25,8 +25,8 @@ const (
 var (
 	DB_DRIVER         string = "postgres"
 	DB_HOST           string = "localhost"
-	DB_NAME           string = "bemobi"
-	DB_USER           string = "bemobiapi"
+	DB_NAME           string = "shorten"
+	DB_USER           string = "wilson"
 	DB_PASSWORD       string = "1234"
 	DB_SSL_MODE       string = "disable" // disable | require
 	DB_MAX_CONNECTION int    = 1
@@ -39,7 +39,7 @@ var DBSession *gorm.DB
 func init() {
 	getEnvDatabaseConfig()
 	GetInstance()
-	RebuildDataBase()
+	//RebuildDataBase()
 }
 
 func getEnvDatabaseConfig() {
@@ -127,13 +127,13 @@ func AutoMigrate() {
 
 func CreateFunctionsDB() {
 	GetInstance().Exec(`
-		CREATE OR REPLACE FUNCTION urls_pre_insert() RETURNS trigger AS $$
-	    BEGIN
-	    	IF NEW.alias IS NULL OR NEW.alias = '' THEN
-	        	NEW.alias := hash_encode(NEW.serial, 'secret_salt', 1);
-	        END IF;
-	        RETURN NEW;
-	    END;
+		CREATE OR REPLACE FUNCTION urls_pre_insert() RETURNS TRIGGER AS $$
+		BEGIN
+			IF (NEW.alias IS NULL OR NEW.alias = "") THEN
+		    	NEW.alias := hash_encode(NEW.serial, "secret_salt", 1);
+		    END IF;
+		    RETURN NEW;
+		END;
 		$$ LANGUAGE plpgsql;`)
 }
 
