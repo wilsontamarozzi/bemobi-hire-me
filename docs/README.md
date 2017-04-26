@@ -7,6 +7,10 @@ Projeto realizado com o intuito validar os conhecimentos na programação e moti
 - [**Hashids.org**](http://hashids.org/postgresql/)
 - **Golang 1.7**
 - **AngularJS v1**
+- **Docker**
+
+## Executando a aplicação
+- [Gerando o deploy da API com Docker](https://github.com/wilsontamarozzi/bemobi-hire-me/tree/master/docker)
 
 ## Algoritmo sugerido
 O algoritmo escolhido foi o **hashids** que é uma extensão PostgreSQL responsável por gerar um pequeno hash a partir de um inteiro. As duas grandes vantagens de escolher essa API de terceiros é porque ela gerar o hash seguindo uma sequência lógica e não de forma totalmente randômica, e apesar disso ela garante o segredo da sequência a partir de uma palavra segredo que é possível configurar. Ela também consegue se auto administrar em relação ao tamanho do hash gerado, iniciando se com 2 caracteres e se expandindo conforme a necessidade.
