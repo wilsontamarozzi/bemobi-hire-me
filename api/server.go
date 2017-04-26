@@ -7,7 +7,7 @@ import (
 
 const ENV_RUN_PORT = "PORT"
 
-var RUN_PORT string = "8081"
+var RUN_PORT string = "8080"
 
 func init() {
 	getEnvPort()
