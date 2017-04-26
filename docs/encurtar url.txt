@@ -1,0 +1,36 @@
+title Encurtar URL
+
+Client->API: Envia URL por POST JSON: create()
+note right of Client
+    {
+        "alias": "wilson",
+        "url": "http://www.google.com.br/"
+    }
+end note
+
+API->Database: Verifica se existe alias: getAlias()
+alt possui alias
+Database->API: Retorna todas informações da URL
+API->Client: Retorna ERRO JSON
+note right of Client
+    {
+        ERR_CODE: 001, 
+        Description:CUSTOM ALIAS ALREADY EXISTS
+    }
+end note
+else não possui alias
+note over Database: Não possui alias e gera nova: hash_encode()
+Database->API: Retorna URL + primary_key
+API->Database: Busca URL pelo primary_key: get()
+Database->API: Retorna todas informações da URL
+API->Client: Retorna URL JSON
+note right of Client
+    {
+        "alias": "XYhakR",
+        "url": "http://www.google.com.br/",
+        "statistics": {
+            "time_taken": "10ms",
+        }
+    }
+end note
+end

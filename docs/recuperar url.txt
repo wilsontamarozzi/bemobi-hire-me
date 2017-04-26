@@ -1,0 +1,30 @@
+title Recuperar URL
+
+Client->API: Envia alias por PATH: getByAlias()
+note right of Client
+    http://shorten/u/{alias}
+end note
+API->Database: Verifica se existe alias: getByAlias()
+Database->API: Retorna todas informações da URL
+
+alt possui alias
+API->Client: Retorna URL JSON
+note right of Client
+    {
+        "uuid": uuid,
+        "alias": "XYhakR",
+        "address": "http://www.google.com.br/",
+        "view": 2
+    }
+end note
+
+else não possui alias
+API->Client: Retorna ERRO JSON
+note right of Client
+    {
+        ERR_CODE: 002, 
+        Description:SHORTENED URL NOT FOUND
+    }
+end note
+
+end
