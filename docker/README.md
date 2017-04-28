@@ -9,7 +9,7 @@ $ docker build -t bemobi/hire-me .
 ## Criando o container a partir da imagem
 Após executar o comando aguarde alguns segundo e verifique se o container foi criado e está executando `docker ps -a`
 ```sh
-$ docker run -d -p 8080:8080 --name hire-me-server bemobi/hire-me
+$ docker run -d -p 8081:8081 --name hire-me-server bemobi/hire-me
 ```
 
 ## Executando a API
@@ -25,10 +25,10 @@ Para saber mais sobre requisições utilizando a ferramenta cURL, veja este [art
 
 ## Resquest POST sem Alias
 ```sh
-$ curl -H "Content-type: application/json" -X POST -d '{"address":"www.google.com.br"}' "http://localhost:8080/api/v1/url/shorten"
+$ curl -H "Content-type: application/json" -X POST -d '{"address":"www.google.com.br"}' "http://localhost:8081/api/v1/url/shorten"
 ```
 
 ## Resquest POST com Alias
 ```sh
-$ curl -H "Content-type: application/json" -X POST -d '{"address":"www.google.com.br", "alias": "wilson"}' "http://localhost:8080/api/v1/url/shorten"
+$ curl -H "Content-type: application/json" -X POST -d '{"address":"www.google.com.br", "alias": "wilson"}' "http://localhost:8081/api/v1/url/shorten"
 ```

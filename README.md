@@ -1,3 +1,7 @@
+# Minha Solução
+[Ler Comentários](https://github.com/wilsontamarozzi/bemobi-hire-me/tree/master/docs)
+
+---
 # Hire.me
 Um pequeno projeto para testar suas habilidades como programador.
 

@@ -20,7 +20,7 @@ O motivo da escolha foi porque apesar desse hash parecer randômico para o usuá
 - Seguindo a lógica do problema acima, temos outros grande problema de consumo de recursos, onde hoje muitos servidores como Heroku e Amazon possui limites de requests e recursos em seus planos. Como a aplicação teria que gerar um hash novo e verificar se ele já existe a todo momento, o consumo seria elevado e desnecessário, gerando um desperdício de orçamento nos planos.
 
 ## Bonus Points
-- [ ] Crie testcases para todas as funcionalidades criadas
+- [x] Crie testcases para todas as funcionalidades criadas
 - [x] Crie um endpoint que mostre as dez URL's mais acessadas
 - [x] Crie um client para chamar sua API
 - [x] Faça um diagrama de sequência da implementação feita nos casos de uso (Dica, use o https://www.websequencediagrams.com/)

@@ -2,6 +2,7 @@ package repositories
 
 import (
 	"github.com/wilsontamarozzi/bemobi-hire-me/api/models"
+	"github.com/wilsontamarozzi/bemobi-hire-me/api/database"
 	"net/url"
 	"testing"
 )
@@ -9,6 +10,10 @@ import (
 var URL_TEST = models.URL{
 	Address: "http://example.com.br",
 	Alias:   "wilson",
+}
+
+func init() {
+	database.TruncateTablesDB()
 }
 
 var URL_REPOSITORY_TEST = NewURLRepository()
@@ -25,8 +30,9 @@ func TestCadastroURLComAlias(t *testing.T) {
 		t.Error("Era esperado o ID da URL")
 	}
 
-	if url.Alias == "" {
-		t.Error("Era esperado o ALIAS da URL")
+	if url.Alias != "wilson" {
+		t.Error("Esperado o ALIAS: wilson")
+		t.Error("Recebido o ALIAS: %s", url.Alias)
 	}
 }
 
@@ -44,7 +50,7 @@ func TestCadastroURLSemAlias(t *testing.T) {
 	}
 
 	if url.Alias == "" {
-		t.Error("Era esperado o ALIAS da URL")
+		t.Error("Era esperado o ALIAS da URL %s", url)
 	}
 }
 
@@ -62,7 +68,7 @@ func TestBuscaURLPorAlias(t *testing.T) {
 		t.Error("Era esperado o ID da URL")
 	}
 
-	if !url.IsEmpty() {
+	if url.IsEmpty() {
 		t.Errorf("Esperado registro da URL")
 		t.Errorf("Recebido vazio")
 	}
@@ -70,7 +76,7 @@ func TestBuscaURLPorAlias(t *testing.T) {
 
 func TestListagemDoRanking(t *testing.T) {
 	url1 := URL_TEST
-	url2.Alias = "alias1"
+	url1.Alias = "alias1"
 	url2 := URL_TEST
 	url2.Alias = "alias2"
 
@@ -86,8 +92,8 @@ func TestListagemDoRanking(t *testing.T) {
 	params.Add("page", "1")
 	params.Add("per_page", "50")
 	urls := URL_REPOSITORY_TEST.GetAllRanking(params)
-	if len(urls) <= 0 {
+	if len(urls.Urls) <= 0 {
 		t.Error("Esperado maior que 0")
-		t.Error("Recebido %d", len(url2))
+		t.Error("Recebido %d", len(urls.Urls))
 	}
 }

@@ -6,7 +6,7 @@ import (
 
 var arrayTestCase = []string{"a", "b", "c"}
 
-func TestSizeString(t *testing.T) {
+func TestTamanhoRandomString(t *testing.T) {
 	str := RandomString(2)
 	if len(str) != 2 {
 		t.Errorf("Esperado %s", 2)
@@ -14,7 +14,7 @@ func TestSizeString(t *testing.T) {
 	}
 }
 
-func TestContainItemInArray(t *testing.T) {
+func TestContemItemNoArray(t *testing.T) {
 	item := "a"
 	if !Contains(arrayTestCase, item) {
 		t.Errorf("Esperado %s", true)
@@ -22,7 +22,7 @@ func TestContainItemInArray(t *testing.T) {
 	}
 }
 
-func TestDoNotContainItemInArray(t *testing.T) {
+func TestNaoContemItemNoArray(t *testing.T) {
 	item := "d"
 	if Contains(arrayTestCase, item) {
 		t.Errorf("Esperado %s", false)

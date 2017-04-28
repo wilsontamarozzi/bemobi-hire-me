@@ -40,6 +40,7 @@ func init() {
 	getEnvDatabaseConfig()
 	GetInstance()
 	//RebuildDataBase()
+	//TruncateTablesDB()
 }
 
 func getEnvDatabaseConfig() {
@@ -121,6 +122,10 @@ func DropTablesIfExists() {
 	GetInstance().Exec("DROP TABLE IF EXISTS urls CASCADE;")
 }
 
+func TruncateTablesDB() {
+	GetInstance().Exec("TRUNCATE TABLE urls;")
+}
+
 func AutoMigrate() {
 	GetInstance().AutoMigrate(&models.URL{})
 }
@@ -129,8 +134,8 @@ func CreateFunctionsDB() {
 	GetInstance().Exec(`
 		CREATE OR REPLACE FUNCTION urls_pre_insert() RETURNS TRIGGER AS $$
 		BEGIN
-			IF (NEW.alias IS NULL OR NEW.alias = "") THEN
-		    	NEW.alias := hash_encode(NEW.serial, "secret_salt", 1);
+			IF (NEW.alias IS NULL OR NEW.alias = '') THEN
+		    	NEW.alias := hash_encode(NEW.serial, 'secret_salt', 1);
 		    END IF;
 		    RETURN NEW;
 		END;
