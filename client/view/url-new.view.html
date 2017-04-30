@@ -1,12 +1,14 @@
 <div class="inner cover box-shorten" ng-show="!success">
 	<h1 class="cover-heading">Insira o endereço</h1>
-	<div class="form-group">
-		<input type="text" class="form-control input-lg" placeholder="www.example.com.br" ng-model="url.address"><br><br>
-		<input type="text" class="form-control input-lg" placeholder="{{rootScopeHostname}}opcional" ng-model="url.alias">
-	</div>
-	<p class="lead">
-		<button class="btn btn-lg btn-success" ng-click="saveUrl(url)">Encurtar</button>
-	</p>
+	<form name="urlForm">
+		<div class="form-group">
+			<input type="text" class="form-control input-lg" placeholder="www.example.com.br" ng-model="url.address" ng-required="true"><br><br>
+			<input type="text" class="form-control input-lg" placeholder="{{rootScopeHostname}}opcional" ng-model="url.alias">
+		</div>
+		<p class="lead">
+			<button class="btn btn-lg btn-success" ng-click="saveUrl()" ng-disabled="urlForm.$invalid">Encurtar</button>
+		</p>
+	</form>
 </div>
 
 <div class="inner cover box-shorten" ng-show="success">

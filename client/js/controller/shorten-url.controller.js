@@ -7,8 +7,8 @@
 
 	function Controller($scope, ShortenUrlService) {
 
-		$scope.saveUrl = function(url) {
-			ShortenUrlService.postUrlShorten(url).then(function success(response) {
+		$scope.saveUrl = function() {
+			ShortenUrlService.postUrlShorten($scope.url).then(function success(response) {
 				$scope.success = true;
 				$scope.url = response.data;
 			}, function fail(response) {
