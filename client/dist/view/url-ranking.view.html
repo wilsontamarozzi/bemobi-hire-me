@@ -1,0 +1,17 @@
+<div class="inner cover box-shorten">
+	<h1 class="cover-heading">Ranking</h1><br>
+	<table class="table">
+		<thead>
+			<th>#</th>
+			<th>Url Encurtada</th>
+			<th>Visualizações</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="url in urls | orderBy:'-view'">
+				<th scope="row">{{$index+1}}</th>
+				<td><a href="{{::url.address}}">{{rootScopeHostname}}{{::url.alias}}</a></td>
+				<td>{{::url.view}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
