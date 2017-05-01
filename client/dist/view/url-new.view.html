@@ -11,7 +11,10 @@
 	</form>
 </div>
 
+<h3 ng-show="!success"><span class="label label-danger">{{error}}</span></h3>
+
+
 <div class="inner cover box-shorten" ng-show="success">
-	<h1 class="cover-heading">{{rootScopeHostname}}{{url.alias}}</h1><br>
+	<h1 class="cover-heading"><span class="label label-success">{{rootScopeHostname}}{{url.alias}}</span></h1><br>
 	<p>estatística  nerd <strong>{{url.statistics.time_taken}}</strong></p>
 </div>

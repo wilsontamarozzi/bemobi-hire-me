@@ -1,17 +1,23 @@
-### NPM
+# NPM
 Baixando as bibliotecas utilziadas.
 ```
 $ npm install
 ```
 
-### Build
+# Configurando o host da API
+Para configurar o host para se conectar a API, é necessário ir até o arquivos:
+```sh
+$ js/config/value.config.js
+```
+
+# Build
 Gerando a pasta de distribuição pronta para ser hospedada.
 
 ```
 $ gulp build
 ```
 
-### Gulp
+# Gulp
 Toda a estrutura de configuração das tarefas do Gulp estão no arquivo ```config.js```.
 
 ```

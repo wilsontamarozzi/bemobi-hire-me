@@ -107,7 +107,7 @@ func TestCadastroURLAliasJaExiste(t *testing.T) {
 	})
 
 	r.ServeHTTP(w, req)
-	if w.Code != http.StatusOK {
+	if w.Code != http.StatusConflict {
 		t.Errorf("Esperado %v, recebido %d", http.StatusCreated, w.Code)
 	}
 }

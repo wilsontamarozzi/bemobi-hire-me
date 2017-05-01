@@ -12,7 +12,15 @@
 				$scope.success = true;
 				$scope.url = response.data;
 			}, function fail(response) {
-				$scope.error = response.data.Description;
+				$scope.success = false;
+				switch(response.status) {
+				case 409:
+					$scope.error = 'Esse endereço opcional já existe ;(';
+				break;
+				default:
+					$scope.error = 'Houve um erro ao salvar, mas já estámos trabalhando nisso.';
+				break;
+			}
 			});
 		};
 		

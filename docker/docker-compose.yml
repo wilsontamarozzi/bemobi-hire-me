@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  db:
+    container_name: shorten-db
+    image: db
+    build: ./docker-db
+
+  worker:
+    container_name: shorten-api
+    image: api
+    build: ./docker-worker
+    tty: true
+    environment:
+      DB_HOST: db
+    ports:
+      - 8081:8081
+    links:
+      - db
+
+  web:
+    container_name: shorten-cli
+    image: cli
+    build: ./docker-web
+    tty: true
+    ports:
+      - 8080:80
+    links:
+      - worker

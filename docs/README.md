@@ -7,6 +7,7 @@ Projeto realizado com o intuito validar os conhecimentos na programação e moti
 - [**Hashids.org**](http://hashids.org/postgresql/)
 - **Golang 1.7**
 - **AngularJS v1**
+- **Gulp**
 - **Docker**
 
 ## Executando a aplicação

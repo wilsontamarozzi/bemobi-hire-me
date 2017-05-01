@@ -57,7 +57,7 @@ func (controller URLController) Create(c *gin.Context) {
 		urlTemp := controller.Repository.GetByAlias(url.Alias)
 		// Verifica se o retorno foi vazio
 		if !urlTemp.IsEmpty() {
-			c.JSON(200, gin.H{"ERR_CODE": "001", "Description": "CUSTOM ALIAS ALREADY EXISTS"})
+			c.JSON(409, gin.H{"ERR_CODE": "001", "Description": "CUSTOM ALIAS ALREADY EXISTS"})
 			return
 		}
 	}
